@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить товар</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header><h1>Добавление товара</h1></header>
+    <main class="card">
+        <form method="post" action="/add-product">
+            <label>Название: <input type="text" name="name" required></label><br>
+            <label>Описание: <textarea name="description"></textarea></label><br>
+            <label>Цена: <input type="number" name="price" step="0.01" required></label><br>
+            <label>Ссылка на изображение: <input type="text" name="image_url"></label><br>
+            <button type="submit">Добавить</button>
+        </form>
+    </main>
+</body>
+</html>

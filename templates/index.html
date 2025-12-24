@@ -1,0 +1,15 @@
+<section class="card">
+    <h2>🛍️ Товары</h2>
+    <a href="/add-product"><button>➕ Добавить товар</button></a>
+    <div class="product-list">
+        {% for product in products %}
+        <div class="product-card">
+            <img src="{{ product.image_url }}" alt="{{ product.name }}">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.description }}</p>
+            <p class="price">{{ product.price }} ₽</p>
+            <a href="/product/{{ product.id }}"><button>Купить</button></a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
