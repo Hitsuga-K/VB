@@ -1,15 +1,20 @@
-<section class="card">
-    <h2>🛍️ Товары</h2>
-    <a href="/add-product"><button>➕ Добавить товар</button></a>
-    <div class="product-list">
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Магазин</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="cards">
         {% for product in products %}
-        <div class="product-card">
+        <div class="card">
             <img src="{{ product.image_url }}" alt="{{ product.name }}">
-            <h3>{{ product.name }}</h3>
-            <p>{{ product.description }}</p>
+            <h2>{{ product.name }}</h2>
             <p class="price">{{ product.price }} ₽</p>
-            <a href="/product/{{ product.id }}"><button>Купить</button></a>
+            <a href="/product/{{ product.id }}" class="buy-button">Купить</a>
         </div>
         {% endfor %}
     </div>
-</section>
+</body>
+</html>
