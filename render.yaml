@@ -1,9 +1,11 @@
 services:
   - type: web
-    name: muzlib
+    name: vb-marketplace
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app.main:app --worker-class uvicorn.workers.UvicornWorker
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port 10000
+    plan: free
+    autoDeploy: true
     envVars:
       - key: DATABASE_URL
-        sync: false
+        value: postgresql://vb_data_base1_user:2DKUc0noRLQKkAzQyqNgqsphHrSMeamh@dpg-d5667ke3jp1c73a8ci9g-a.oregon-postgres.render.com/vb_data_base1
