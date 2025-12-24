@@ -6,12 +6,32 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <header><h1>{{ product.name }}</h1></header>
-    <main class="card">
-        <img src="{{ product.image_url }}" alt="{{ product.name }}" width="200">
-        <p>{{ product.description }}</p>
-        <p class="price">{{ product.price }} ₽</p>
-        <button disabled>✅ Куплено</button>
-    </main>
+    <div class="product-details">
+        <img src="{{ product.image_url }}" alt="{{ product.name }}">
+        <div class="right-text">
+            <h2>{{ product.name }}</h2>
+            <p class="desc">{{ product.description }}</p>
+            <p class="price">{{ product.price }} ₽</p>
+            <button>Добавить в корзину</button>
+        </div>
+    </div>
+
+    <div class="Hz">
+        {% for review in reviews %}
+        <div class="review1">
+            <p class="name">{{ review.name }}</p>
+            <p class="otziv">{{ review.text }}</p>
+            <p class="rate">
+                {% for i in range(1, 6) %}
+                    {% if i <= review.rate %}
+                        ★
+                    {% else %}
+                        ☆
+                    {% endif %}
+                {% endfor %}
+            </p>
+        </div>
+        {% endfor %}
+    </div>
 </body>
 </html>
