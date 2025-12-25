@@ -16,6 +16,14 @@ body {
     max-width: 1200px;
     margin: auto;
 }
+.form-container {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    max-width: 600px;
+    margin: 40px auto;
+}
 
 /* Карточка товара */
 .card {
@@ -187,5 +195,6 @@ form input:focus, form textarea:focus {
         width: 100%;
     }
 }
+
 
 
