@@ -6,15 +6,20 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <div class="cards">
-        {% for product in products %}
-        <div class="card">
-            <img src="{{ product.image_url }}" alt="{{ product.name }}">
-            <h2>{{ product.name }}</h2>
-            <p class="price">{{ product.price }} ₽</p>
-            <a href="/product/{{ product.id }}" class="buy-button">Купить</a>
+    <section class="card">
+        <h2>🛍️ Товары</h2>
+        <a href="/add-product" class="add-button">➕ Добавить товар</a>
+
+        <div class="cards">
+            {% for product in products %}
+            <div class="card">
+                <img src="{{ product.image_url }}" alt="{{ product.name }}">
+                <h2>{{ product.name }}</h2>
+                <p class="price">{{ product.price }} ₽</p>
+                <a href="/product/{{ product.id }}" class="buy-button">Купить</a>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-    </div>
+    </section>
 </body>
 </html>
