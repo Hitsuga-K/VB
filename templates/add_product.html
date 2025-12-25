@@ -2,21 +2,19 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Добавить товар</title>
+    <title>Магазин</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <header><h1>Добавление товара</h1></header>
-    <main class="form-container">
-        <form method="post" action="/add-product">
-            <label>Название: <input type="text" name="name" required></label><br>
-            <label>Описание: <textarea name="description"></textarea></label><br>
-            <label>Цена: <input type="number" name="price" step="0.01" required></label><br>
-            <label>Ссылка на изображение: <input type="text" name="image_url"></label><br>
-            <button type="submit">Добавить</button>
-        </form>
-    </main>
+    <div class="cards">
+        {% for product in products %}
+        <div class="card">
+            <img src="{{ product.image_url }}" alt="{{ product.name }}">
+            <h2>{{ product.name }}</h2>
+            <p class="price">{{ product.price }} ₽</p>
+            <a href="/product/{{ product.id }}" class="buy-button">Купить</a>
+        </div>
+        {% endfor %}
+    </div>
 </body>
 </html>
-
-
