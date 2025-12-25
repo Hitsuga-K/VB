@@ -16,14 +16,6 @@ body {
     max-width: 1200px;
     margin: auto;
 }
-.form-container {
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-    max-width: 600px;
-    margin: 40px auto;
-}
 
 /* Карточка товара */
 .card {
@@ -50,7 +42,6 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
-
 .card:hover img {
     transform: scale(1.05);
 }
@@ -69,9 +60,7 @@ body {
 }
 
 /* Кнопки */
-.buy-button,
-.right-text button,
-form button {
+.buy-button {
     display: inline-block;
     padding: 12px 20px;
     background: linear-gradient(135deg, #ff00cc, #a629b9);
@@ -85,11 +74,40 @@ form button {
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
-.buy-button:hover,
-.right-text button:hover,
-form button:hover {
+.buy-button:hover {
     background: linear-gradient(135deg, #a629b9, #ff00cc);
     transform: translateY(-2px);
+}
+
+form button {
+    background: linear-gradient(135deg, #00cc66, #00994d);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+form button:hover {
+    background: linear-gradient(135deg, #00994d, #00cc66);
+    transform: translateY(-2px);
+}
+
+.add-button {
+    display: inline-block;
+    margin: 20px 40px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #00cc66, #00994d);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.add-button:hover {
+    background: linear-gradient(135deg, #00994d, #00cc66);
 }
 
 /* Страница товара */
@@ -165,25 +183,6 @@ form button:hover {
 }
 
 /* Форма добавления товара */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    max-width: 500px;
-    margin: 20px auto;
-}
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 14px;
-    transition: border-color 0.3s ease;
-}
-form input:focus, form textarea:focus {
-    border-color: #a629b9;
-    outline: none;
-}
 .form-container {
     background-color: #fff;
     border-radius: 12px;
@@ -197,6 +196,8 @@ form {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    max-width: 500px;
+    margin: 20px auto;
 }
 
 form label {
@@ -215,27 +216,9 @@ form input, form textarea {
     font-size: 14px;
     transition: border-color 0.3s ease;
 }
-
 form input:focus, form textarea:focus {
     border-color: #a629b9;
     outline: none;
-}
-
-form button {
-    background: linear-gradient(135deg, #ff00cc, #a629b9);
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-form button:hover {
-    background: linear-gradient(135deg, #a629b9, #ff00cc);
-    transform: translateY(-2px);
 }
 
 /* Адаптивность */
@@ -248,7 +231,3 @@ form button:hover {
         width: 100%;
     }
 }
-
-
-
-
